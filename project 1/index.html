@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/section.css">
     <link rel="stylesheet" href="styles/sHero.css">
+    <link rel="stylesheet" href="styles/sAktu.css">
 
 </head>
 <body>
 
     
-    <nav>
-        <img id="logo" src="img/logo.png" height="90" alt="logo">
+    <nav style="height: 200px;">
+        <div style="display: none;">...</div>
+        <img id="logo" src="img/logo.png" height="90" width="200" alt="logo">
         <ul>
             <a href="#aktualności"><li>aktualności</li></a>
             <a href="#turnieje"><li>turnieje</li></a>
@@ -25,94 +27,343 @@
             <a href="#abc"><li>abc golfa</li></a>
             <a href="#kontakt"><li>kontakt</li></a>
         </ul>
+        <style>
+            nav{
+                display: flex; 
+                flex-direction: column; 
+                justify-content: center;
+                align-items: center;
+            }
+            nav>ul{ 
+                list-style-type: none; 
+                display: flex;
+                gap: 20px;
+                padding: 0;
+            }
+            nav>ul>a{
+                text-decoration: none;
+                color: var(--brown);
+                text-transform: uppercase;
+            }
+            @media (max-width: 780px) {
+                nav>ul{
+                    background-color: red;
+                    display: none !important;
+                }
+                nav{
+                    flex-direction: row;
+                    justify-content: flex-start;
+                }
+                nav>div{
+                    display: block !important;
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 5px;
+                    border: solid 1px var(--gray);
+                    text-align: center;
+                    line-height: 50px;
+                    font-size: 32px;
+                    cursor: pointer;
+                    margin-right: 20px;
+                }
+            }
+        </style>
     </nav>
 
 
-
-    <section id="hero" class="white-txt">
-
-        <div class="section-bg left-cut">
-            <img src="img/hero_bg.png"/>
-        </div>
-
-        <ul>
-            <li>symulator</li>
-            <li>etykieta golfa</li>
-            <li>zasady gry</li>
-            <li>pojecia golfowe</li>
-            <li>historia golfa</li>
-            <li>noclegi</li>
-            <li>polecane filmy</li>
-            <li>polecane ksiazki</li>
-        </ul>
-
-        <div id="pogoda">
-            <h1>pogoda</h1>
-        </div>
-
+    <section id="hero" style="height: calc(100vh - 200px); color: #fff;">
+        <div class="bg">            
+            <img src="img/hero_bg.png" class="triangleR">
+        </div>        
+        <h1>hero</h1>
     </section>
 
 
-
-    <section id="aktualności" style="height: 700px;">
+    <section id="aktualności" style="padding: 1.5rem 0 50px 0;">
         <h1>aktualności</h1>
-    </section>
-
-
-
-    <section id="turnieje" style="height: 700px;" class="white-txt">
-
-        <div class="section-bg right-cut red-trapeze">
-            <img src="img/turnieje_bg.png"/>
+        <div style="display: flex; flex-direction: column;">
+            <div class="post">
+                <div class="head">2017-12-30<b>Dzisiaj zamknięte</b></div>
+                <div class="body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ullam quae incidunt aspernatur necessitatibus soluta rem voluptas ipsam culpa. Eligendi, eos inventore quos saepe autem at suscipit fugit vel nihil.
+                    <a style="color: green; float: right; margin-top: 1rem;">więcej ></a>
+                </div>
+            </div>
+            <div class="post">
+                <div class="head">2017-12-30<b>Dzisiaj zamknięte</b></div>
+                <div class="body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ullam quae incidunt aspernatur necessitatibus soluta rem voluptas ipsam culpa. Eligendi, eos inventore quos saepe autem at suscipit fugit vel nihil.
+                    <a style="color: green; float: right; margin-top: 1rem;">więcej ></a>
+                </div>
+            </div>
+            <div class="post">
+                <div class="head">2017-12-30<b>Dzisiaj zamknięte</b></div>
+                <div class="body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ullam quae incidunt aspernatur necessitatibus soluta rem voluptas ipsam culpa. Eligendi, eos inventore quos saepe autem at suscipit fugit vel nihil.
+                    <a style="color: green; float: right; margin-top: 1rem;">więcej ></a>
+                </div>
+            </div>
+            <div class="post">
+                <div class="head">2017-12-30<b>Dzisiaj zamknięte</b></div>
+                <div class="body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ullam quae incidunt aspernatur necessitatibus soluta rem voluptas ipsam culpa. Eligendi, eos inventore quos saepe autem at suscipit fugit vel nihil.
+                    <a style="color: green; float: right; margin-top: 1rem;">więcej ></a>
+                </div>
+            </div>
         </div>
-
-        <h1>turnieje</h1>
-
+        <style>
+            .post{
+                border-bottom: solid var(--gray) 1px;
+                display: flex;
+                padding: 1rem 1rem 1rem 0;
+                max-width: 1200px;
+            }
+            .post>.head{
+                display: flex;
+                flex-direction: column;
+                min-width: 200px;
+                color: var(--brown);
+            }
+             @media (max-width: 780px) {
+                    .post{
+                        flex-direction: column;
+                    }
+                    .post>.head{
+                        margin-bottom: rem;
+                    }
+                }
+        </style>
     </section>
 
 
+    <section id="turnieje" style="color: #fff;">
+        <div class="bg trapeze">            
+            <img src="img/turnieje_bg.png" class="triangle">
+        </div>
+        <h1 style="padding-top: 100px;">turnieje</h1>
+        <h1 style="text-align: left;">kalendarz turniejowy 2018</h1>
+        <div style="display: grid;
+                    grid-template-columns: 200px 200px;
+                    column-gap: 200px;
+                    row-gap: 2rem;">
+            <div class="event">
+                <b>Kwiecień / April1</b><br>
+                08.04 - turniej A<br>
+                22.04 - turniej Be<br>
+                28.04 - turniej Ce
+            </div>
+            <div class="event">
+                <b>Kwiecień / April2</b><br>
+                08.04 - turniej A<br>
+                22.04 - turniej Be<br>
+                28.04 - turniej Ce
+            </div>
+            <div class="event">
+                <b>Kwiecień / April3</b><br>
+                08.04 - turniej A<br>
+                22.04 - turniej Be<br>
+                28.04 - turniej Ce
+            </div>
+            <div class="event">
+                <b>Kwiecień / April4</b><br>
+                08.04 - turniej A<br>
+                22.04 - turniej Be<br>
+                28.04 - turniej Ce
+            </div>
+            <style>
+                #turnieje .event.event:nth-of-type(4n + 1),
+                #turnieje .event.event:nth-of-type(4n + 2){                    
+                    border-bottom: solid 1px #fff;
+                    padding-bottom: 2rem;
+                }
+                @media (max-width: 780px) {
+                    #turnieje > div:last-of-type{
+                        grid-template-columns: none !important;
+                    }
+                    .event{
+                        padding-bottom: 1rem;
+                        border-bottom: solid 1px #fff;
+                    }
+                    .event:last-of-type{
+                        border-bottom: none;
+                    }
+                }
+            </style>
+        </div>
+    </section>
 
-    <section id="pole" style="height: 700px;">
+
+    <section id="pole">
         <h1>pole</h1>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias ex, neque quas, repellendus eos laborum aut in, accusamus magnam eius earum tempora perspiciatis! Ex repudiandae cupiditate, officiis cumque est placeat!
+            Praesentium itaque aperiam, sed fugiat tempora nulla ipsam officia in dolorum officiis! Rerum, earum! Debitis perferendis repudiandae, enim aliquam, laborum delectus, sint tenetur illum maiores inventore nobis magnam minus tempora?
+            Unde quaerat magnam ratione repudiandae amet sequi, vel natus adipisci deserunt libero eveniet quo at. Vitae, a. Eligendi earum in culpa, ex rerum quod laboriosam eaque deleniti necessitatibus. Quae, voluptates.
+            Illum quas eum magnam. Officiis tempore, dicta iure, voluptates sapiente labore totam omnis dolorum sint laboriosam saepe cupiditate in temporibus voluptas praesentium cumque? Qui voluptatem ipsum neque odio ea dicta!
+            Sed minus molestiae nesciunt dolorem repellat, tempore soluta numquam explicabo. Cupiditate, neque est repudiandae, consequatur deleniti ipsum quia numquam delectus nam minus nulla, doloremque voluptate totam veniam dicta aliquid. Exercitationem.
+        </p>
     </section>
 
 
+    <section id="noclegi" style="color: #fff;">
+        <div class="bg trapezeBlue"></div>
+        <h1 style="padding-top: 100px;">noclegi</h1>
+        <h1 style="font-size: 16px;">cennik | galeria</h1>
+        <div style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+            row-gap: 20px;
+            ">
 
-    <section id="noclegi" style="height: 700px;" class="white-txt">
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sit maxime recusandae incidunt, aliquid eum impedit libero officia quo qui neque molestias modi ullam obcaecati, dicta accusamus illum laborum saepe?
+                <ul>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                </ul>
+            </div>
 
-        <div class="section-bg right-cut blue-trapeze">
-            <!-- <img src="img/turnieje_bg.png"/> -->
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, esse. Iure minima sed, fugiat voluptatem animi tenetur asperiores beatae cum modi aliquam quis possimus veniam odit ipsum labore explicabo eum?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, esse. Iure minima sed, fugiat voluptatem animi tenetur asperiores beatae cum modi aliquam quis possimus veniam odit ipsum labore explicabo eum?
+                <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempora dolorum assumenda optio? Culpa facere recusandae nesciunt laudantium eligendi dignissimos praesentium doloremque, dolor voluptas debitis nihil similique expedita tempora doloribus.
+            </div>
+            
+            <img src="img/room.png" width="100%">
+            
+            <img src="img/room.png" width="100%">
+
         </div>
-
-        <h1>noclegi</h1>
-
+        <style>
+            @media (max-width: 780px) {
+                #noclegi > div:last-of-type{
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
     </section>
 
 
-
-    <section id="akademia" style="height: 700px;">
+    <section id="akademia">
+        <div class="bg"></div>
         <h1>akademia</h1>
-    </section>
-
-
-
-    <section id="abc" style="height: 700px;" class="white-txt">
-
-        <div class="section-bg right-cut blue-trapeze">
-            <img src="img/abc_bg.png"/>
+        <h1 style="font-size: 16px;">pole 6-cio dołkowe | driving range | lekcje z instruktorem</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum praesentium, minus, corrupti impedit optio eum ut, obcaecati omnis rerum numquam nobis voluptas. Recusandae ut rem laborum magni blanditiis veniam dolor.</p>
+        
+        <h2 style="font-size: 18px;">CENNIK</h2>
+        <div style="display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;">
+            <style>
+                #akademia > div:nth-of-type(2) > *{
+                    border-bottom: solid 1px var(--gray);
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-right: 10px;
+                }
+            </style>
+            <div><b style="text-transform: uppercase;">akademia golfa</b></div>
+            <div><b style="text-transform: uppercase;">dla członków kpgc</b></div>
+            <div><b style="text-transform: uppercase;">dla gości</b></div>
+            <div>Green fee*</div>
+            <div>0 PLN</div>
+            <div>30 PLN</div>
+            <div>Wypożyczenie 1 szt. kija</div>
+            <div>10 PLN</div>
+            <div>15 PLN</div>
         </div>
-
-        <h1>abc golfa</h1>
-
+        <p style="font-size: 0.8rem;">*opłata za grę na polu</p>
+        <div style="display: flex; justify-content: center;">
+            <img src="img/akademia.png" width="100%" style="max-width: 900px; border-radius: 2%;">
+        </div>
+        
     </section>
 
 
+    <section id="abc" style="color: #fff;">
+        <div class="bg trapezeBlue">            
+            <img src="img/abc_bg.png" class="triangle">
+        </div>
+        <h1 style="padding-top: 100px;">abc golfa</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dicta illo optio minima exercitationem. Perferendis odit tempora optio repellat, cupiditate aspernatur autem hic tenetur recusandae ullam doloribus eaque! Suscipit, nisi!
+        Voluptate aliquam labore magnam enim cupiditate tempore earum, ducimus iusto sint, animi odit incidunt rerum alias. Odio, dolorum facere dignissimos iusto velit et nostrum fuga, modi, fugit officia quidem maiores!
+        Aut inventore atque corporis rem eos, perferendis, et tempora magni soluta quasi officiis? Voluptates, aspernatur. Fuga est voluptas reprehenderit repellendus sint distinctio, inventore ipsam voluptates quaerat dignissimos eligendi dicta quis?
+        Ducimus eos dolor officiis amet libero ullam! Velit, aut. Hic esse enim inventore repellat iusto dolor quam commodi totam illum laboriosam. Quo quas ipsa molestias atque aperiam omnis minima ratione?
+        Tempora distinctio cum tenetur consequatur aperiam aliquid, nemo, ad officia nam voluptatibus est illo quia dolorem quaerat repudiandae voluptas. Quas molestias blanditiis quos, vel aperiam velit deleniti tenetur fugit eum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores voluptas nam obcaecati. Facere et voluptatum quaerat placeat. Magnam voluptates molestiae, facere asperiores voluptas rerum esse itaque, vitae architecto, harum doloremque?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eligendi sequi, ratione ea totam consequatur cumque, ut dolore officia iste obcaecati id mollitia atque qui labore veritatis ex natus! Quod?
+        Quae impedit nisi aspernatur voluptas enim delectus ab veritatis soluta. Voluptatibus vel, pariatur ad placeat velit maiores assumenda aut enim nisi, nobis reprehenderit cupiditate voluptates perferendis dicta repellat. Eveniet, illo.</p>
+    </section>
 
-    <section id="kontakt" style="height: 700px;">
+
+    <section id="kontakt" style="padding-bottom: 20px;">
         <h1>kontakt</h1>
+        <div style="display: grid;
+                    grid-template-columns: 1fr 1fr;">
+            <style>
+                @media (max-width: 780px) {
+                    #kontakt > div:nth-of-type(1){
+                        grid-template-columns: 1fr !important;
+                    }
+                    #kontakt > div:nth-of-type(1){
+                        gap: 20px;
+                    }
+                }
+            </style>
+            <div>
+                <b>Adres pola:</b>
+                <p>
+                    Kalinowo k/Niesulic<br>
+                    ul/ Golfowa 1 <br>
+                    66-213 Skąpe <br>
+                    woj. lubuskie 
+                </p>
+                <p>
+                    marketing@kalinowepola.pl
+                </p>
+                <p>
+                    tel. +48 515 000 000
+                </p>
+                <p>
+                    GPS: 52o 12'32.55"N 15o 22'34.75"E
+                </p>
+            </div>
+            <div>
+                <b>Dane do faktury:</b>
+                <p>Kalinowe Pola Sp. z o.o. <br>ul.Golfowa 1, Kalinowo <br>66-213 Skąpe</p>
+                <p>
+                    NIP: 927-000-00-00 <br>
+                    REGON: 0312398127398
+                    KRS: 821489671284
+                </p>
+                <p>
+                    BZ WBK PL 73 3214 5345 123123 4124 4213 4124
+                </p>
+                <p>
+                    BZ WBK EUR 73 3214 5345 123123 4124 4213 4124
+                </p>
+                
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <img src="img/map.png" width="100%" style="max-width: 900px; border-radius: 2%;">
+        </div>
     </section>
 
-    
+
+    <footer>
+        <img src="img/logo2.png" height="60px">
+        <a href="">polityka prywatności</a>
+        <a href="">regulamin</a>
+        <a href="">współpraca</a>
+        <a href="">noclegi</a>
+        <a href="">restauracja</a>
+        <a href="">hotel</a>
+    </footer>
+
 
 </body>
 </html>
