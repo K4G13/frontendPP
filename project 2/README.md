@@ -1,8 +1,12 @@
 server:
 ```
   npm i
-  npx prisma generate
-  npx prisma push
-  npx prisma pull
+  npx prisma db push
   node server.js
+```
+
+angular:
+```
+  npm i
+  npm start
 ```
