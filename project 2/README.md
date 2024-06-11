@@ -10,3 +10,9 @@ angular:
   npm i
   npm start
 ```
+
+svelte:
+```
+  npm i
+  npm run dev
+```
